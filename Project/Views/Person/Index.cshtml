@@ -1,1 +1,13 @@
-<h2>DAy la view cua controller</h2>
+@{
+    ViewData["Title"] = "Index";
+}
+<form asp-action="Index" method="get">
+        <label>Nhap ho ten :</label> 
+        <input type="text"  name="Full name" value="@ViewData["CurrentFilter"]" />
+        <label>Nhap ma sinh vien :</label>
+        <input type="text"  name="StudentID" value="@ViewData["CurrentFilter"]" />
+        <input type="submit" value="Gui du lieu">
+    
+</form>
+
+<h1>@ViewBag.Message</h1>

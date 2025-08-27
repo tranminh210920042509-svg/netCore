@@ -9,5 +9,14 @@ namespace Project.Controllers
         {
             return View();
         }
+        [HttpPost]
+        public IActionResult Index(string Fullname, string StudentID)
+        {
+            ViewData["CurrentFilter"] = Fullname;
+            ViewData["CurrentFilter"] = StudentID;
+            string stroutput = "Ni hão : " + Fullname + " Ma sinh vien : " + StudentID;
+            ViewBag.Message = stroutput;
+            return View();
+        }
     }
-}
+} 
