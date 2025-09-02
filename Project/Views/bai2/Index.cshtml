@@ -1,0 +1,23 @@
+@model MVC.Models.bai2
+
+<h2>Nhập số</h2>
+
+<form asp-action="Index" method="post">
+    <input asp-for="A" type="number" placeholder="Nhập số thứ 1" />
+    <input asp-for="B" type="number" placeholder="Nhập số thứ 2" />
+
+    <select asp-for="Op" required>
+        <option value="">-- Chọn --</option>
+        <option value="sum">Tổng (A + B)</option>
+        <option value="diff">Hiệu (A - B)</option>
+        <option value="mul">Tích (A × B)</option>
+        <option value="div">Thương (A ÷ B)</option>
+    </select>
+
+    <input type="submit" value="Tính" />
+</form>
+
+@if (ViewBag.Message != null)
+{
+    <h3>Kết quả: @ViewBag.Message</h3>
+}

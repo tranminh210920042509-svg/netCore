@@ -1,22 +1,26 @@
+using Microsoft.AspNetCore.Mvc;
+using Project.Models.Person;
+
+
 namespace Project.Controllers
 {
-
-    using Microsoft.AspNetCore.Mvc;
-
     public class PersonController : Controller
     {
+
         public IActionResult Index()
         {
+
             return View();
         }
         [HttpPost]
-        public IActionResult Index(string Fullname, string StudentID)
+        public IActionResult Index(Person ps)
         {
-            ViewData["CurrentFilter"] = Fullname;
-            ViewData["CurrentFilter"] = StudentID;
-            string stroutput = "Ni hão : " + Fullname + " Ma sinh vien : " + StudentID;
-            ViewBag.Message = stroutput;
+
+
+            ViewBag.Message = "xin chao" + "_" + ps.Fullname + "-" + ps.StudentID;
             return View();
         }
     }
-} 
+}
+
+        
