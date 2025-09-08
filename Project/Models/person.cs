@@ -1,13 +1,16 @@
-namespace Project.Models.Person
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
+namespace Project.Models
 {
+  [Table("Person")]
     public class Person
-    {
-        public string StudentID { get; set; } = default!;
-        public string Fullname { get; set; } = default!;
-    
-        public int namsinh { get; set; } = default!;
+        {
+            [Key]
+            public string PersonId { get; set; }
+            public string FullName { get; set; }
+            public int Address { get; set; }
 
-        public string hoten { get; set; } = default!;
+     }
 }
-}
+    
