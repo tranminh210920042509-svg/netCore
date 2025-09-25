@@ -1,0 +1,16 @@
+@model Project.Models.Employee
+
+<h2>Delete Employee</h2>
+<h4>Bạn có chắc muốn xóa?</h4>
+<div>
+    <h5>@Model.FullName</h5>
+    <h5>@Model.Address</h5>
+</div>
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="PersonId" />
+    <button type="submit" class="btn btn-danger">Delete</button> |
+    <a asp-action="Index">Back to List</a>
+</form>
+@section Scripts {  
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
